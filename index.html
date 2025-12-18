@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="logo">ResumeBuilder</div>
+      <div class="tagline">Build your professional resume in minutes</div>
+      <button id="startBtn" class="start-button">Start Building Resume</button>
+    </div>
+  </header>
+
+  <script src="script.js"></script>
+  
+  <nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">ResumeBuilder</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Build Resume</a></li>
+      <li><a href="#">Templates</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Welcome to ResumeBuilder</h1>
+      <p>Create a job-winning resume in just a few minutes. It’s fast, free, and effective.</p>
+      <button id="heroBtn">Create Resume Now</button>
+    </div>
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Resume Illustration" />
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="features-container">
+    <h2>Why Choose ResumeBuilder?</h2>
+    <div class="feature-cards">
+      <div class="feature-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3242/3242257.png" alt="Fast Icon" />
+        <h3>Fast</h3>
+        <p>Build your resume in under 5 minutes with our easy-to-use builder.</p>
+      </div>
+      <div class="feature-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2274/2274651.png" alt="Free Icon" />
+        <h3>Free</h3>
+        <p>No hidden charges. Create and download your resume absolutely free.</p>
+      </div>
+      <div class="feature-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="User Friendly Icon" />
+        <h3>User-Friendly</h3>
+        <p>Our intuitive interface helps you focus on your content, not the format.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <div class="how-container">
+    <h2>How It Works</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Fill Details" />
+        <h3>1. Fill Details</h3>
+        <p>Enter your personal and professional information in a simple form.</p>
+      </div>
+      <div class="how-step">
+        <img src="https://cdn-icons-png.flaticon.com/512/6815/6815043.png" alt="Preview" />
+        <h3>2. Preview Resume</h3>
+        <p>Instantly see a live preview of your resume with selected templates.</p>
+      </div>
+      <div class="how-step">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Download" />
+        <h3>3. Download PDF</h3>
+        <p>Download your resume as a professional PDF file, ready to use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resume-form-section" id="resume-form">
+  <div class="form-container">
+    <h2>Build Your Resume</h2>
+    <form id="resumeForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="John Doe" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="john@example.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="jobTitle">Job Title</label>
+        <input type="text" id="jobTitle" placeholder="Frontend Developer" />
+      </div>
+
+      <div class="form-group">
+        <label for="skills">Skills</label>
+        <textarea id="skills" rows="3" placeholder="HTML, CSS, JavaScript"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="education">Education</label>
+        <textarea id="education" rows="3" placeholder="BSc in Computer Science, XYZ University"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="experience">Experience</label>
+        <textarea id="experience" rows="4" placeholder="2 years at ABC Corp as a Web Developer"></textarea>
+      </div>
+
+      <button type="submit">Generate Resume</button>
+    </form>
+  </div>
+</section>
+
+<section class="live-preview-section">
+  <div class="preview-container">
+    <h2>Live Resume Preview</h2>
+    <div class="resume-preview" id="resumePreview">
+      <h1 id="previewName">Your Name</h1>
+      <p id="previewJob">Job Title</p>
+      <p><strong>Email:</strong> <span id="previewEmail">you@example.com</span></p>
+
+      <div class="preview-block">
+        <h3>Skills</h3>
+        <p id="previewSkills">HTML, CSS, JavaScript</p>
+      </div>
+
+      <div class="preview-block">
+        <h3>Education</h3>
+        <p id="previewEducation">BSc in Computer Science, XYZ University</p>
+      </div>
+
+      <div class="preview-block">
+        <h3>Experience</h3>
+        <p id="previewExperience">2 years at ABC Corp as a Web Developer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="template-selection-section">
+  <div class="template-container">
+    <h2>Select a Resume Template</h2>
+    <div class="template-options">
+      <button onclick="applyTemplate('template1')">Classic</button>
+      <button onclick="applyTemplate('template2')">Modern</button>
+      <button onclick="applyTemplate('template3')">Minimal</button>
+    </div>
+  </div>
+</section>
+
+<body onload="applyTemplate('template1')">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<div class="download-section" style="text-align: center; margin: 40px 0;">
+  <button id="downloadBtn" class="download-btn">Download Resume as PDF</button>
+</div>
+
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>ResumeBuilder</h3>
+      <p id="copyright">&copy; <span id="year"></span> ResumeBuilder. All rights reserved.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#build">Build Resume</a>
+      <a href="#templates">Templates</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+
+</body>
+</html>
